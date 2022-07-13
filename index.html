@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Function Point Methods</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+   <div class="container">
+      <!--CFP-->
+      <h2>Crude Function Point (CFP)</h2>
+      <p>Crude Function Points (CFP) adalah untuk menghitung bobot nilai dari komponen-komponen Function Point yang dikaitkan dengan software yang akan dibuat.</p>
+      <br>
+      <!-- Tabel CFP-->
+      <table border="1" width="100%" cellpadding="5px">
+         <thead>
+            <tr style="text-align:center">
+               <th rowspan="3">No.</th>
+               <th rowspan="3">Tipe Komponen</th>
+               <th colspan="9">Level Kompleksitas</th>
+               <th rowspan="3">Total CFP</th>
+            </tr>
+            <tr>
+               <th colspan="3">Mudah</th>
+               <th colspan="3">Sedang</th>
+               <th colspan="3">Kompleks</th>
+            </tr>
+            <tr>
+               <th>JML</th>
+               <th>BOBOT</th>
+               <th>POINT</th>
+
+               <th>JML</th>
+               <th>BOBOT</th>
+               <th>POINT</th>
+
+               <th>JML</th>
+               <th>BOBOT</th>
+               <th>POINT</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>1</td>
+               <td>Tipe Input</td>
+
+               <td><input type="number" name="jumlah_is" id="jml_is" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">3</td>
+               <td><input type="text" name="total_is" id="t_is" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_im" id="jml_im" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">4</td>
+               <td><input type="text" name="total_im" id="t_im" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_ik" id="jml_ik" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">6</td>
+               <td><input type="text" name="total_ik" id="t_ik" size="5" value="" readonly></td>
+
+               <th><input type="text" name="total_cfpi" id="t_cfpi" size="5" value="0" readonly></th>
+            </tr>
+
+            <tr>
+               <td>2</td>
+               <td>Tipe Output</td>
+
+               <td><input type="number" name="jumlah_os" id="jml_os" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">4</td>
+               <td><input type="text" name="total_os" id="t_os" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_om" id="jml_om" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">5</td>
+               <td><input type="text" name="total_om" id="t_om" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_ok" id="jml_ok" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">7</td>
+               <td><input type="text" name="total_ok" id="t_ok" size="5" value="" readonly></td>
+
+               <th><input type="text" name="total_cfpo" id="t_cfpo" size="5" value="0" readonly></th>
+            </tr>
+
+            <tr>
+               <td>3</td>
+               <td>Tipe Query/Search/View</td>
+
+               <td><input type="number" name="jumlah_qsvs" id="jml_qsvs" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">3</td>
+               <td><input type="text" name="total_qsvs" id="t_qsvs" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_qsvm" id="jml_qsvm" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">4</td>
+               <td><input type="text" name="total_qsvm" id="t_qsvm" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_qsvk" id="jml_qsvk" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">6</td>
+               <td><input type="text" name="total_qsvk" id="t_qsvk" size="5" value="" readonly></td>
+
+               <th><input type="text" name="total_qsvk" id="t_cfpqsv" size="5" value="0" readonly></th>
+            </tr>
+
+            <tr>
+               <td>4</td>
+               <td>Tipe File/Table/Database</td>
+
+               <td><input type="number" name="jumlah_ftds" id="jml_ftds" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">7</td>
+               <td><input type="text" name="total_ftds" id="t_ftds" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_ftdm" id="jml_ftdm" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">10</td>
+               <td><input type="text" name="total_ftdm" id="t_ftdm" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_ftdk" id="jml_ftdk" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">15</td>
+               <td><input type="text" name="total_ftdk" id="t_ftdk" size="5" value="" readonly></td>
+
+               <th><input type="text" name="total_ftdk" id="t_cfpftd" size="5" value="0" readonly></th>
+            </tr>
+
+            <tr>
+               <td>5</td>
+               <td>Tipe Interface External</td>
+
+               <td><input type="number" name="jumlah_ies" id="jml_ies" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">5</td>
+               <td><input type="text" name="total_ies" id="t_ies" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_iem" id="jml_iem" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">7</td>
+               <td><input type="text" name="total_iem" id="t_iem" size="5" value="" readonly></td>
+
+               <td><input type="number" name="jumlah_iek" id="jml_iek" size="3" value="0" onchange="FP()"></td>
+               <td class="bobot">10</td>
+               <td><input type="text" name="total_iek" id="t_iek" size="5" value="" readonly></td>
+
+               <th><input type="text" name="total_iek" id="t_cfpie" size="5" value="0" readonly></th>
+            </tr>
+            <tr>
+               <th colspan="11">TOTAL</th>
+               <th><input type="text" name="total_cfp" id="t_cfp" size="5" value="0" onchange="FP()"></th>
+            </tr>
+         </tbody>
+      </table>
+      <br><br>
+
+      <!-- RCAF -->
+      <div class="rcaf">
+         <h2>Relative Complexity Adjusment Factor (RCAF)</h2>
+         <div class="penjelasan">
+            <br>
+            <p>Relative Complexity Adjusment Factor (RCAF) digunaka untuk menghitung bobot kompleksitas software berdasarkan 14 karakteristik</p>
+            <br>
+            <p> Penilaian Bobot Kompleksitas memiliki skala 0-5</p>
+            <p>- 0 = Tidak Pengaruh</p>
+            <p>- 1 = Insidental</p>
+            <p>- 2 = Moderat</p>
+            <p>- 3 = Rata-rata</p>
+            <p>- 4 = Signifikan</p>
+            <p>- 5 = Esential</p>
+         </div>
+
+         <br><br>
+
+         <div class="tabelrcaf">
+            <!-- Tabel RCAF-->
+            <table border="1" width="100%" cellpadding="5px">
+               <thead>
+                  <tr style="text-align:center">
+                     <th>No.</th>
+                     <th>Karakteristik</th>
+                     <th colspan="9">Bobot</th>
+                  </tr>
+               </thead>
+
+               <tr>
+                  <td>1</td>
+                  <td class="ket">Tingkat kompleksitas Komunikasi Data</td>
+                  <td><input type="number" name="RCAF_1" id="rcaf1" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>2</td>
+                  <td class="ket">Tingkat Kompleksitas Pemrosesan Terdistribusi</td>
+                  <td><input type="number" name="RCAF_2" id="rcaf2" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>3</td>
+                  <td class="ket">Tingkat Kompleksitas Performance</td>
+                  <td><input type="number" name="RCAF_3" id="rcaf3" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>4</td>
+                  <td class="ket">Tingkat Kompleksitas Konfigurasi</td>
+                  <td><input type="number" name="RCAF_4" id="rcaf4" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>5</td>
+                  <td class="ket">Tingkat Frekuensi Penggunaan Software</td>
+                  <td><input type="number" name="RCAF_5" id="rcaf5" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>6</td>
+                  <td class="ket">Tingkat Frekuensi Input Data</td>
+                  <td><input type="number" name="RCAF_6" id="rcaf6" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>7</td>
+                  <td class="ket">Tingkat Kemudahan Penggunaan Bagi User</td>
+                  <td><input type="number" name="RCAF_7" id="rcaf7" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>8</td>
+                  <td class="ket">Tingkat Frekuensi Update data</td>
+                  <td><input type="number" name="RCAF_8" id="rcaf8" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>9</td>
+                  <td class="ket">Tingkat kompleksitas Prosesing Data</td>
+                  <td><input type="number" name="RCAF_9" id="rcaf9" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>10</td>
+                  <td class="ket">Tingkat Kemungkinan Penggunaan Kembali/ReusableKode Program</td>
+                  <td><input type="number" name="RCAF_10" id="rcaf10" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>11</td>
+                  <td class="ket">Tingkat Kemudahan Dalam Instalasi</td>
+                  <td><input type="number" name="RCAF_11" id="rcaf11" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>12</td>
+                  <td class="ket">Tingkat Kemudahan Operasional Software (Backup,Recovery,dsb)</td>
+                  <td><input type="number" name="RCAF_12" id="rcaf12" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>13</td>
+                  <td class="ket">Tingkat Software Dibuat Untuk Multi Organisasi/Perusahhaan/Client</td>
+                  <td><input type="number" name="RCAF_13" id="rcaf13" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td>14</td>
+                  <td class="ket">Tingkat Kompleksitas Dalam Mengikuti Perubahan/Fleksibel</td>
+                  <td><input type="number" name="RCAF_14" id="rcaf14" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()" max="5" min="0"></td>
+               </tr>
+
+               <tr>
+                  <td colspan="2" style="text-align: center;">TOTAL</td>
+                  <td><input style="size: 24px;" type="number" name="RCAF_total" id="total_rcaf" size="3" placeholder="[ 0 / 1 / 2 / 3 / 4 / 5 ]" onchange="FP()"></td>
+               </tr>
+
+            </table>
+            <br><br>
+         </div>
+      </div>
+
+      <!--FP-->
+      <div class="fp">
+         <h2>Function Point (FP)</h2>
+         <p>Rumus menghitung Function Point = CFP x (0.6 + 0.01 + RCAF)</p>
+         <br>
+         <p>Hasil Perhitungan Function Point Anda Adalah : </p>
+         <input type="number" name="Hasil_CFP" id="hasil_cfp" size="5" readonly style="font-size: 30px;">
+      </div>
+
+      <script src="script.js"></script>
+   </div>
+</body>
+
+</html>
